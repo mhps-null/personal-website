@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "Fira Code", monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased transition-colors duration-300;
+  }
+
+  :root.dark body {
+    @apply bg-gray-900 text-gray-50;
+  }
+}
+
+@layer utilities {
+  .hover\:text-glow-red:hover {
+    text-shadow:
+      0 0 8px #e53935,
+      0 0 16px #b00020;
+  }
+
+  .hover\:text-glow-blue:hover {
+    text-shadow:
+      0 0 8px #3f6bff,
+      0 0 16px #1e3aff;
+  }
+}
+
+@variant dark (&:where(.dark, .dark *));
