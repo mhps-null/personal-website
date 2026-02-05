@@ -24,7 +24,7 @@ const Header = () => {
                         <a
                             key={link.name}
                             href={link.href}
-                            className="text-sm font-medium -colors hover:text-[#FF6A6A] hover:text-glow-red"
+                            className="text-sm font-medium -colors dark:hover:text-[#FF6A6A] dark:hover:text-glow-red hover:text-[#6FA8FF] hover:text-glow-blue"
                         >
                             {link.name}
                         </a>
