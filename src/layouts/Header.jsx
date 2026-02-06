@@ -15,11 +15,9 @@ const Header = () => {
         <header className="sticky top-0 z-50 w-full bg-gray-50/60 dark:bg-gray-900/60 border-b border-slate-200 dark:border-slate-800 backdrop-blur-md duration-300">
             <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
 
-                {/* TITLE */}
                 <span className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide">mhps-null</span>
 
                 <div className="flex items-center gap-8 max-md:gap-4">
-                    {/* DESKTOP MENU */}
                     <nav className="hidden md:flex md:gap-8 items-center">
                         {NAV_LINKS.map((link) => (
                             <a
@@ -33,7 +31,6 @@ const Header = () => {
                     </nav>
                     <ThemeToggle />
 
-                    {/* MOBILE MENU BUTTON */}
                     <button
                         className="rounded-full p-1 text-gray-900 dark:text-gray-50 transition hover:bg-slate-200 dark:hover:bg-slate-800 md:hidden"
                         onClick={() => setIsOpen(!isOpen)}
@@ -50,7 +47,6 @@ const Header = () => {
                 </div>
             </div>
 
-            {/* MOBILE MENU DROPDOWN */}
             {isOpen && (
                 <div className="absolute top-16 left-0 w-full border-b border-slate-200 dark:border-slate-800 bg-gray-50 dark:bg-gray-900 transition-colors duration-300 shadow-lg md:hidden">
                     <nav className="flex flex-col p-4 space-y-4">
