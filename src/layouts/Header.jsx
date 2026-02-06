@@ -12,59 +12,58 @@ const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-gray-900 dark:border-gray-50 backdrop-blur-md">
+        <header className="sticky top-0 z-50 w-full border-b border-gray-900/60 dark:border-gray-50/60 backdrop-blur-md">
             <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
 
                 {/* TITLE */}
-                <span className="text-xl font-bold tracking-wide">mhps-null</span>
+                <span className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide">mhps-null</span>
 
-                {/* DESKTOP MENU */}
-                <nav className="hidden md:flex md:gap-8 items-center">
-                    {NAV_LINKS.map((link) => (
-                        <a
-                            key={link.name}
-                            href={link.href}
-                            className="text-sm font-medium -colors dark:hover:text-[#FF6A6A] dark:hover:text-glow-red hover:text-[#6FA8FF] hover:text-glow-blue"
-                        >
-                            {link.name}
-                        </a>
-                    ))}
+                <div className="flex items-center gap-8 max-md:gap-4">
+                    {/* DESKTOP MENU */}
+                    <nav className="hidden md:flex md:gap-8 items-center">
+                        {NAV_LINKS.map((link) => (
+                            <a
+                                key={link.name}
+                                href={link.href}
+                                className="text-lg md:text-sm lg:text-md font-medium -colors dark:hover:text-[#FF6A6A] dark:hover:text-glow-red hover:text-indigo-600 hover:text-glow-indigo"
+                            >
+                                {link.name}
+                            </a>
+                        ))}
+                    </nav>
                     <ThemeToggle />
-                </nav>
 
-                {/* MOBILE MENU BUTTON */}
-                <button
-                    className="rounded p-2 text-gray-50 transition hover:bg-gray-100 md:hidden"
-                    onClick={() => setIsOpen(!isOpen)}
-                    aria-label="Toggle menu"
-                >
-                    {/* Ikon Menu / Close (SVG sederhana) */}
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        {isOpen ? (
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                        ) : (
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                        )}
-                    </svg>
-                </button>
+                    {/* MOBILE MENU BUTTON */}
+                    <button
+                        className="rounded-full p-2 text-gray-900 dark:text-gray-50 transition hover:bg-slate-200 dark:hover:bg-slate-800 md:hidden"
+                        onClick={() => setIsOpen(!isOpen)}
+                        aria-label="Toggle menu"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            {isOpen ? (
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            ) : (
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                            )}
+                        </svg>
+                    </button>
+                </div>
             </div>
 
             {/* MOBILE MENU DROPDOWN */}
-            {/* Logika: Jika isOpen true, render menu ini */}
             {isOpen && (
-                <div className="absolute top-16 left-0 w-full border-b border-gray-200 bg-white shadow-lg md:hidden">
+                <div className="absolute top-16 left-0 w-full border-b border-gray-900 dark:border-gray-50 bg-gray-50 dark:bg-gray-900 transition-colors duration-300 shadow-lg md:hidden">
                     <nav className="flex flex-col p-4 space-y-4">
                         {NAV_LINKS.map((link) => (
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className="block text-base font-medium text-slate-600 hover:text-indigo-600"
-                                onClick={() => setIsOpen(false)} // Tutup menu saat link diklik
+                                className="block text-base font-medium text-slate-600 dark:text-slate-300 dark:hover:text-[#FF6A6A] dark:hover:text-glow-red hover:text-indigo-600 hover:text-glow-indigo"
+                                onClick={() => setIsOpen(false)}
                             >
                                 {link.name}
                             </a>
                         ))}
-                        <hr className="border-gray-100" />
                     </nav>
                 </div>
             )}

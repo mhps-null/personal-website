@@ -12,7 +12,7 @@ const ThemeToggle = () => {
     return (
         <button
             onClick={() => setDark(!dark)}
-            className="rounded-full p-1 transition
+            className="rounded-full p-1 transition w-8 h-8 flex items-center justify-center
                  text-slate-800 hover:bg-slate-200
                  dark:text-slate-200 dark:hover:bg-slate-800"
             aria-label="Toggle theme"

@@ -24,8 +24,8 @@
     0 0 16px #b00020;
 }
 
-@utility text-glow-blue {
+@utility text-glow-indigo {
   text-shadow:
-    0 0 8px #3f6bff,
-    0 0 16px #1e3aff;
+    0 0 8px rgb(79 70 229 / 0.8),
+    0 0 16px rgb(79 70 229 / 0.6);
 }
