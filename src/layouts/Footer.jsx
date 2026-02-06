@@ -59,7 +59,7 @@ const SOCIALS = [
             </svg>
         ),
     },
-];
+]
 
 const Footer = () => {
 
@@ -73,8 +73,7 @@ const Footer = () => {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        // Class hover di sini akan mengubah warna SVG karena SVG pakai fill="currentColor"
-                        className="text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                        className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
                         aria-label={social.name}
                     >
                         {social.icon}

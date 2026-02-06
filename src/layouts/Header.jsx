@@ -2,17 +2,17 @@ import { useState } from 'react';
 import ThemeToggle from "./../components/ThemeToggle"
 
 const NAV_LINKS = [
-    { name: 'About me', href: '#aboutme' },
+    { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
     { name: 'Project', href: '#project' },
     { name: 'Contact', href: '#contact' },
-];
+]
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="sticky top-0 z-50 w-full bg-gray-50/60 dark:bg-gray-900/60 border-b border-slate-200 dark:border-slate-800 backdrop-blur-md duration-300">
+        <header className="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 backdrop-blur-md duration-300">
             <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
 
                 <span className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide">mhps-null</span>
@@ -48,7 +48,7 @@ const Header = () => {
             </div>
 
             {isOpen && (
-                <div className="absolute top-16 left-0 w-full border-b border-slate-200 dark:border-slate-800 bg-gray-50 dark:bg-gray-900 transition-colors duration-300 shadow-lg md:hidden">
+                <div className="absolute top-16 left-0 w-full border-b border-slate-200 dark:border-slate-800 transition-colors duration-300 shadow-lg md:hidden">
                     <nav className="flex flex-col p-4 space-y-4">
                         {NAV_LINKS.map((link) => (
                             <a
@@ -64,7 +64,7 @@ const Header = () => {
                 </div>
             )}
         </header>
-    );
-};
+    )
+}
 
-export default Header;
+export default Header
