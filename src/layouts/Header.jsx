@@ -12,7 +12,7 @@ const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-gray-900/60 dark:border-gray-50/60 backdrop-blur-md">
+        <header className="sticky top-0 z-50 w-full bg-gray-50/60 dark:bg-gray-900/60 border-b border-slate-200 dark:border-slate-800 backdrop-blur-md duration-300">
             <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
 
                 {/* TITLE */}
@@ -35,7 +35,7 @@ const Header = () => {
 
                     {/* MOBILE MENU BUTTON */}
                     <button
-                        className="rounded-full p-2 text-gray-900 dark:text-gray-50 transition hover:bg-slate-200 dark:hover:bg-slate-800 md:hidden"
+                        className="rounded-full p-1 text-gray-900 dark:text-gray-50 transition hover:bg-slate-200 dark:hover:bg-slate-800 md:hidden"
                         onClick={() => setIsOpen(!isOpen)}
                         aria-label="Toggle menu"
                     >
