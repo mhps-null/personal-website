@@ -52,7 +52,7 @@ const Header = () => {
 
             {/* MOBILE MENU DROPDOWN */}
             {isOpen && (
-                <div className="absolute top-16 left-0 w-full border-b border-gray-900 dark:border-gray-50 bg-gray-50 dark:bg-gray-900 transition-colors duration-300 shadow-lg md:hidden">
+                <div className="absolute top-16 left-0 w-full border-b border-slate-200 dark:border-slate-800 bg-gray-50 dark:bg-gray-900 transition-colors duration-300 shadow-lg md:hidden">
                     <nav className="flex flex-col p-4 space-y-4">
                         {NAV_LINKS.map((link) => (
                             <a
