@@ -25,3 +25,23 @@
     0 0 8px rgb(79 70 229 / 0.8),
     0 0 16px rgb(79 70 229 / 0.6);
 }
+
+@layer utilities {
+  .dark .text-gradient-red {
+    @apply bg-linear-to-r
+     from-red-400
+     via-rose-400
+     to-pink-400
+      bg-clip-text
+      text-transparent;
+  }
+
+  .text-gradient-blue {
+    @apply bg-linear-to-r
+           from-blue-600
+           via-indigo-500
+           to-purple-600
+           bg-clip-text
+           text-transparent;
+  }
+}

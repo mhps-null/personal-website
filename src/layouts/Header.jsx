@@ -23,7 +23,7 @@ const Header = () => {
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className="text-lg md:text-sm lg:text-md font-medium -colors dark:hover:text-[#FF6A6A] dark:hover:text-glow-red hover:text-indigo-600 hover:text-glow-indigo"
+                                className="text-lg md:text-sm lg:text-md font-medium dark:hover:text-red-400 dark:hover:text-glow-red hover:text-blue-600 hover:text-glow-indigo"
                             >
                                 {link.name}
                             </a>
@@ -54,7 +54,7 @@ const Header = () => {
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className="block text-base font-medium text-slate-600 dark:text-slate-300 dark:hover:text-[#FF6A6A] dark:hover:text-glow-red hover:text-indigo-600 hover:text-glow-indigo"
+                                className="block text-base font-medium text-slate-600 dark:text-slate-300 dark:hover:text-red-400 dark:hover:text-glow-red hover:text-indigo-600 hover:text-glow-indigo"
                                 onClick={() => setIsOpen(false)}
                             >
                                 {link.name}
