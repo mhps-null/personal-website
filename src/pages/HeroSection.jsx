@@ -1,16 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import profileImg from '../assets/Haris.png';
-
-const HERO_DATA = {
-    name: "Muhammad Haris Putra Sulastianto",
-    roles: [
-        "Web Developer",
-        "Game Developer",
-        "Computer Systems Enthusiast",
-        "Gamer"
-    ],
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero facere sit sapiente inventore enim, corrupti repellat doloremque aperiam soluta blanditiis ab recusandae fugit voluptas earum.",
-};
+import { motion, AnimatePresence } from "framer-motion"
+import { HERO_DATA } from "../constants/heroData"
 
 const HeroSection = () => {
     const [roleIndex, setRoleIndex] = useState(0);
@@ -24,7 +15,7 @@ const HeroSection = () => {
 
     return (
         <section
-            id="hero"
+            id="about"
             className="w-full min-h-[60vh] flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8"
         >
             <div className="w-full max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-12">
@@ -36,7 +27,18 @@ const HeroSection = () => {
                         </h1>
 
                         <h2 className="text-xl lg:text-3xl font-bold tracking-tight text-gray-700 dark:text-gray-300">
-                            I'm a <span className="dark:text-red-400 text-blue-600 text-gradient-red text-gradient-blue">{HERO_DATA.roles[roleIndex]}</span>
+                            I'm a <AnimatePresence mode="wait">
+                                <motion.span
+                                    key={roleIndex}
+                                    className="text-gradient-red text-gradient-blue inline-block"
+                                    initial={{ opacity: 0, y: 6 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -6 }}
+                                    transition={{ duration: 0.35 }}
+                                >
+                                    {HERO_DATA.roles[roleIndex]}
+                                </motion.span>
+                            </AnimatePresence>
                         </h2>
                     </div>
 

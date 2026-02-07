@@ -12,7 +12,7 @@ const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 backdrop-blur-md duration-300">
+        <header className="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 backdrop-blur-3xl duration-300">
             <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
 
                 <span className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide">mhps-null</span>
