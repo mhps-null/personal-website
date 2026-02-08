@@ -94,7 +94,6 @@ const ContactSection = () => {
                                       bg-blue-600 dark:bg-red-500
                                       hover:bg-blue-700 dark:hover:bg-red-600
                                       px-4 py-2 text-sm font-medium text-white
-                                      
                                       focus:outline-none
                                       hover:glow-indigo
                                       dark:hover:glow-red
@@ -102,6 +101,20 @@ const ContactSection = () => {
                         >
                             Send Message
                         </button>
+                        <p className="text-center text-sm text-slate-600 dark:text-slate-400">
+                            Or email me directly at{" "}
+                            <a
+                                href="mailto:mharisputras.work@gmail.com"
+                                className="
+                                          font-medium
+                                          text-indigo-600 dark:text-red-400
+                                          hover:underline
+                                          focus:outline-none focus:underline
+                                        "
+                            >
+                                mharisputras.work@gmail.com
+                            </a>
+                        </p>
                     </form>
                 </div>
             </div>

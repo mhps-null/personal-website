@@ -78,7 +78,7 @@ const HeroSection = () => {
                         <img
                             src={profileImg}
                             alt={`Portrait of ${HERO_DATA.name}`}
-                            className="relative w-full h-full object-cover rounded-full border-4 border-white dark:border-gray-800  shadow-2xl z-10"
+                            className="relative w-full h-full object-cover rounded-full border-4 border-white dark:border-gray-800 transition-colors duration-300 shadow-2xl z-10"
                             loading="eager"
                         />
                     </div>

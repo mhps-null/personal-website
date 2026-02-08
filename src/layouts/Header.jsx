@@ -12,7 +12,7 @@ const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 backdrop-blur-3xl duration-300">
+        <header className="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 backdrop-blur-3xl transition-colors duration-300">
             <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
 
                 <span className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide">mhps-null</span>
@@ -48,13 +48,18 @@ const Header = () => {
             </div>
 
             {isOpen && (
-                <div className="absolute top-16 left-0 w-full border-b border-slate-200 dark:border-slate-800  shadow-lg md:hidden">
+                <div className="absolute top-16 left-0 w-full
+                                border-b border-slate-200 dark:border-slate-800
+                                shadow-lg
+                                backdrop-blur-3xl
+                                bg-white/70 dark:bg-slate-950/70 transition-colors duration-300
+                                md:hidden">
                     <nav className="flex flex-col p-4 space-y-4">
                         {NAV_LINKS.map((link) => (
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className="block text-base font-medium text-slate-600 dark:text-slate-300 dark:hover:text-red-400 dark:hover:text-glow-red hover:text-indigo-600 hover:text-glow-indigo"
+                                className="block text-base font-medium text-slate-600 dark:text-slate-300"
                                 onClick={() => setIsOpen(false)}
                             >
                                 {link.name}

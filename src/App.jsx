@@ -8,7 +8,7 @@ import { motion } from "framer-motion"
 
 function App() {
 
-  return (<div className="flex min-h-screen flex-col bg-white text-slate-900 transition-colors duration-300 dark:bg-gray-950 dark:text-slate-100">
+  return (<div className="flex min-h-screen flex-col bg-white dark:bg-gray-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
 
     <Header />
     <main className="grow">
