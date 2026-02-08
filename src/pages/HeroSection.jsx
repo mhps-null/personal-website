@@ -1,7 +1,18 @@
 import { useState, useEffect } from 'react';
 import profileImg from '../assets/Haris.png';
 import { motion, AnimatePresence } from "framer-motion"
-import { HERO_DATA } from "../constants/heroData"
+
+const HERO_DATA = {
+    name: "Muhammad Haris Putra Sulastianto",
+    roles: [
+        "Web Developer",
+        "Game Developer",
+        "Computer Systems Enthusiast",
+        "Gamer",
+    ],
+    description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit...",
+};
 
 const HeroSection = () => {
     const [roleIndex, setRoleIndex] = useState(0);

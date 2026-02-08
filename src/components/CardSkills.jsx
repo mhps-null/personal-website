@@ -1,4 +1,4 @@
-const Card = ({ icon, title, description, skills }) => {
+const CardSkills = ({ icon, title, description, skills }) => {
     return (
         <div className="w-64 rounded-xl border border-slate-200 dark:border-slate-800
                     p-4 text-center shadow-lg">
@@ -32,4 +32,4 @@ const Card = ({ icon, title, description, skills }) => {
     )
 }
 
-export default Card
+export default CardSkills

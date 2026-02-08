@@ -1,4 +1,4 @@
-import Card from "./../components/Card"
+import CardSkills from "../components/CardSkills"
 
 const SkillsSection = () => {
 
@@ -11,8 +11,8 @@ const SkillsSection = () => {
 
                 <p className="w-3/4 text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe voluptatum laborum corporis tempore, fugit voluptas beatae maxime ut nemo vero, pariatur velit illo. Laudantium nihil aliquam laborum, quisquam ipsa consequatur.</p>
 
-                <div className="flex flex-wrap gap-8">
-                    <Card
+                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                    <CardSkills
                         icon={
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -29,11 +29,11 @@ const SkillsSection = () => {
                                 <path d="M14 4l-4 16" />
                             </svg>
                         }
-                        title="Software Engineer"
+                        title="Software Engineering"
                         description="Building responsive, modern web interfaces with clean and scalable code."
                         skills={["React", "Tailwind CSS", "JavaScript", "Framer Motion"]}
                     />
-                    <Card
+                    <CardSkills
                         icon={
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="1.8"
@@ -48,7 +48,7 @@ const SkillsSection = () => {
                         description="Building responsive, modern web interfaces with clean and scalable code."
                         skills={["React", "Tailwind CSS", "JavaScript", "Framer Motion"]}
                     />
-                    <Card
+                    <CardSkills
                         icon={
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="1.8"
@@ -59,7 +59,27 @@ const SkillsSection = () => {
                                 <circle cx="12" cy="16" r="1" />
                             </svg>
                         }
-                        title="PC Builder"
+                        title="PC Builder and System"
+                        description="Building responsive, modern web interfaces with clean and scalable code."
+                        skills={["React", "Tailwind CSS", "JavaScript", "Framer Motion"]}
+                    />
+                    <CardSkills
+                        icon={
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="1.8"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                className="w-full h-full">
+                                <rect x="3" y="3" width="18" height="18" rx="2" />
+                                <path d="M9 9h6v6H9z" />
+                                <path d="M3 9h6" />
+                                <path d="M15 15h6" />
+                            </svg>
+                        }
+                        title="Game Development"
                         description="Building responsive, modern web interfaces with clean and scalable code."
                         skills={["React", "Tailwind CSS", "JavaScript", "Framer Motion"]}
                     />

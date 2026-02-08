@@ -2,6 +2,7 @@ import Header from "./layouts/Header"
 import Footer from "./layouts/Footer"
 import HeroSection from "./pages/HeroSection"
 import SkillsSection from "./pages/SkillsSection"
+import ProjectsSection from "./pages/ProjectsSection"
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
 
         <HeroSection />
         <SkillsSection />
+        <ProjectsSection />
 
       </div>
     </main>
