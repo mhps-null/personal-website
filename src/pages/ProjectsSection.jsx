@@ -58,7 +58,7 @@ const PROJECTS_DATA = [
 
 const ProjectsSection = () => {
     return (
-        <section className="w-full py-16 px-4 sm:px-6 lg:px-8 flex justify-center">
+        <section id="projects" className="w-full py-16 px-4 sm:px-6 lg:px-8 flex justify-center">
             <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
 
                 <h2 className="text-3xl lg:text-5xl font-black text-center text-gray-900 dark:text-white mb-4">

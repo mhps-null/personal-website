@@ -32,7 +32,7 @@ const Header = () => {
                     <ThemeToggle />
 
                     <button
-                        className="rounded-full p-1 text-gray-900 dark:text-gray-50 transition hover:bg-slate-200 dark:hover:bg-slate-800 md:hidden"
+                        className="rounded-full p-1 text-gray-900 dark:text-gray-50 transition-colors duration-300 hover:bg-slate-200 dark:hover:bg-slate-800 md:hidden"
                         onClick={() => setIsOpen(!isOpen)}
                         aria-label="Toggle menu"
                     >
