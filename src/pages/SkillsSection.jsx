@@ -110,12 +110,12 @@ const SkillsSection = () => {
             id="skills"
             className="w-full py-16 px-4 sm:px-6 lg:px-8 flex justify-center"
         >
-            <div className="w-full max-w-7xl mx-auto flex flex-col items-center gap-10">
-                <h2 className="text-3xl lg:text-5xl font-black tracking-tight text-gray-900 dark:text-white">
+            <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
+                <h2 className="text-3xl lg:text-5xl font-black tracking-tight text-gray-900 dark:text-white mb-4">
                     My Skills
                 </h2>
 
-                <p className="w-3/4 text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe voluptatum laborum corporis tempore, fugit voluptas beatae maxime ut nemo vero, pariatur velit illo. Laudantium nihil aliquam laborum, quisquam ipsa consequatur.</p>
+                <p className="w-3/4 text-center text-slate-600 dark:text-slate-400 mb-12">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe voluptatum laborum corporis tempore, fugit voluptas beatae maxime ut nemo vero, pariatur velit illo. Laudantium nihil aliquam laborum, quisquam ipsa consequatur.</p>
 
                 <motion.div
                     className="grid gap-6 md:grid-cols-2 lg:grid-cols-4"

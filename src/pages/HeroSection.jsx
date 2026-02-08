@@ -58,7 +58,14 @@ const HeroSection = () => {
                     </p>
 
                     <div className="pt-0">
-                        <button className="px-6 py-3 bg-blue-600 dark:bg-red-500 text-white font-semibold rounded-lg hover:bg-blue-700 dark:hover:bg-red-600 transition duration-300">
+                        <button className="px-6 py-3 rounded-md
+                                      bg-blue-600 dark:bg-red-500
+                                      hover:bg-blue-700 dark:hover:bg-red-600
+                                      text-sm font-medium text-white
+                                      transition duration-300
+                                      focus:outline-none
+                                      hover:glow-indigo
+                                      dark:hover:glow-red">
                             Contact Me
                         </button>
                     </div>
@@ -71,7 +78,7 @@ const HeroSection = () => {
                         <img
                             src={profileImg}
                             alt={`Portrait of ${HERO_DATA.name}`}
-                            className="relative w-full h-full object-cover rounded-full border-4 border-white dark:border-gray-800 transition-colors duration-300 shadow-2xl z-10"
+                            className="relative w-full h-full object-cover rounded-full border-4 border-white dark:border-gray-800  shadow-2xl z-10"
                             loading="eager"
                         />
                     </div>

@@ -59,13 +59,13 @@ const PROJECTS_DATA = [
 const ProjectsSection = () => {
     return (
         <section className="w-full py-16 px-4 sm:px-6 lg:px-8 flex justify-center">
-            <div className="w-full max-w-7xl mx-auto flex flex-col gap-10 items-center">
+            <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
 
-                <h2 className="text-3xl lg:text-5xl font-black text-center text-gray-900 dark:text-white">
+                <h2 className="text-3xl lg:text-5xl font-black text-center text-gray-900 dark:text-white mb-4">
                     My Projects
                 </h2>
 
-                <p className="w-3/4 text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe voluptatum laborum corporis tempore, fugit voluptas beatae maxime ut nemo vero, pariatur velit illo. Laudantium nihil aliquam laborum, quisquam ipsa consequatur.</p>
+                <p className="w-3/4 text-center text-slate-600 dark:text-slate-400 mb-12">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe voluptatum laborum corporis tempore, fugit voluptas beatae maxime ut nemo vero, pariatur velit illo. Laudantium nihil aliquam laborum, quisquam ipsa consequatur.</p>
 
                 <motion.div
                     className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
