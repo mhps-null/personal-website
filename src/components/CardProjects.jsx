@@ -3,23 +3,25 @@ const CardProjects = ({ image, title, description, tags = [] }) => {
         <div
             className="rounded-xl border border-slate-200 dark:border-slate-800
                  overflow-hidden text-center shadow-lg
-                 transition-transform duration-300 hover:-translate-y-1"
+                 transition-transform duration-300 hover:-translate-y-1
+                 h-full flex flex-col"
         >
-            <div className="relative aspect-video w-full overflow-hidden">
+            <div className="relative aspect-video w-full overflow-hidden shrink-0">
                 {image}
             </div>
 
-            <div className="px-4 pb-4">
-                <h3 className="mt-4 text-lg font-bold text-slate-900 dark:text-white">
+            <div className="px-4 pb-4 flex flex-col flex-1 gap-4">
+
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white pt-4">
                     {title}
                 </h3>
 
-                <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                <p className="text-sm text-slate-600 dark:text-slate-400">
                     {description}
                 </p>
 
                 {tags.length > 0 && (
-                    <div className="mt-4 flex flex-wrap justify-center gap-2">
+                    <div className="flex flex-wrap justify-center gap-2">
                         {tags.map((tag) => (
                             <span
                                 key={tag}
@@ -37,7 +39,7 @@ const CardProjects = ({ image, title, description, tags = [] }) => {
                     href="#"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 inline-flex w-full items-center justify-center
+                    className="mt-auto inline-flex w-full items-center justify-center
              rounded-lg border border-blue-600
              px-4 py-2 text-sm font-semibold
              text-blue-600 transition
