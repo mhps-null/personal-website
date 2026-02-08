@@ -110,7 +110,7 @@ const SkillsSection = () => {
             id="skills"
             className="w-full py-16 px-4 sm:px-6 lg:px-8 flex justify-center"
         >
-            <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
+            <div className="w-full max-w-7xl mt-8 mx-auto flex flex-col items-center">
                 <h2 className="text-3xl lg:text-5xl font-black tracking-tight text-gray-900 dark:text-white mb-4">
                     My Skills
                 </h2>
