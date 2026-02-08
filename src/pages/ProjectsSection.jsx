@@ -16,7 +16,7 @@ const ProjectsSection = () => {
                     }
                     title="Software Engineer"
                     description="Building responsive, modern web interfaces with clean and scalable code."
-                    tag={["React", "Tailwind CSS", "JavaScript", "Framer Motion"]}
+                    tags={["React", "Tailwind CSS", "JavaScript", "Framer Motion"]}
                 />
                 <CardProjects
                     image={
@@ -24,7 +24,7 @@ const ProjectsSection = () => {
                     }
                     title="Software Engineer"
                     description="Building responsive, modern web interfaces with clean and scalable code."
-                    tag={["React", "Tailwind CSS", "JavaScript", "Framer Motion"]}
+                    tags={["React", "Tailwind CSS", "JavaScript", "Framer Motion"]}
                 />
                 <CardProjects
                     image={
@@ -32,7 +32,7 @@ const ProjectsSection = () => {
                     }
                     title="Software Engineer"
                     description="Building responsive, modern web interfaces with clean and scalable code."
-                    tag={["React", "Tailwind CSS", "JavaScript", "Framer Motion"]}
+                    tags={["React", "Tailwind CSS", "JavaScript", "Framer Motion"]}
                 />
                 <CardProjects
                     image={
@@ -40,7 +40,7 @@ const ProjectsSection = () => {
                     }
                     title="Software Engineer"
                     description="Building responsive, modern web interfaces with clean and scalable code."
-                    tag={["React", "Tailwind CSS", "JavaScript", "Framer Motion"]}
+                    tags={["React", "Tailwind CSS", "JavaScript", "Framer Motion"]}
                 />
                 <CardProjects
                     image={
@@ -48,7 +48,7 @@ const ProjectsSection = () => {
                     }
                     title="Software Engineer"
                     description="Building responsive, modern web interfaces with clean and scalable code."
-                    tag={["React", "Tailwind CSS", "JavaScript", "Framer Motion"]}
+                    tags={["React", "Tailwind CSS", "JavaScript", "Framer Motion"]}
                 />
                 <CardProjects
                     image={
@@ -56,7 +56,7 @@ const ProjectsSection = () => {
                     }
                     title="Software Engineer"
                     description="Building responsive, modern web interfaces with clean and scalable code."
-                    tag={["React", "Tailwind CSS", "JavaScript", "Framer Motion"]}
+                    tags={["React", "Tailwind CSS", "JavaScript", "Framer Motion"]}
                 />
             </div>
         </div>
