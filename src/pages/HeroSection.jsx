@@ -62,7 +62,6 @@ const HeroSection = () => {
                                       bg-blue-600 dark:bg-red-500
                                       hover:bg-blue-700 dark:hover:bg-red-600
                                       text-sm font-medium text-white
-                                      transition-colors duration-300
                                       focus:outline-none
                                       hover:glow-indigo
                                       dark:hover:glow-red">

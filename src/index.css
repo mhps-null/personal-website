@@ -9,6 +9,11 @@
 @variant dark (&:where(.dark, .dark *));
 
 @layer base {
+  button,
+  input,
+  textarea {
+    @apply transition-colors duration-300;
+  }
   html {
     font-family: var(--font-sans);
   }
