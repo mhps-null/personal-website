@@ -8,7 +8,6 @@ const HERO_DATA = {
         "Web Developer",
         "Game Developer",
         "Computer Systems Enthusiast",
-        "Gamer",
     ],
     description:
         "A computer science student doing what excites them and putting their best into it.",
@@ -51,15 +50,15 @@ const SOCIALS = [
         name: 'Email',
         href: 'https://mail.google.com/mail/?view=cm&to=mharisputras.work@gmail.com',
         icon: (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path d="M2.25 6.75A2.25 2.25 0 0 1 4.5 4.5h15a2.25 2.25 0 0 1 2.25 2.25v.243l-9.75 5.85-9.75-5.85V6.75Z" />
-            <path d="M2.25 8.568v8.682A2.25 2.25 0 0 0 4.5 19.5h15a2.25 2.25 0 0 0 2.25-2.25V8.568l-9.75 5.85-9.75-5.85Z" />
-          </svg>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path d="M2.25 6.75A2.25 2.25 0 0 1 4.5 4.5h15a2.25 2.25 0 0 1 2.25 2.25v.243l-9.75 5.85-9.75-5.85V6.75Z" />
+                <path d="M2.25 8.568v8.682A2.25 2.25 0 0 0 4.5 19.5h15a2.25 2.25 0 0 0 2.25-2.25V8.568l-9.75 5.85-9.75-5.85Z" />
+            </svg>
         ),
     },
 ]
@@ -108,9 +107,9 @@ const HeroSection = () => {
                     </p>
 
                     <div className="pt-0 flex space-x-6 items-center max-md:flex-col max-md:space-x-0 max-md:space-y-4 max-md:w-full">
-                      <a
-                        href="#projects"
-                        className="px-6 py-3 rounded-md w-fit shrink-0
+                        <a
+                            href="#projects"
+                            className="px-6 py-3 rounded-md w-fit shrink-0
                                    bg-blue-600 dark:bg-red-500
                                    hover:bg-blue-700 dark:hover:bg-red-600
                                    text-sm font-medium text-white
@@ -118,41 +117,41 @@ const HeroSection = () => {
                                    focus:outline-none
                                    hover:glow-indigo
                                    dark:hover:glow-red"
-                      >
-                        View My Work
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="w-4 h-4 ml-2"
                         >
-                          <line x1="3" y1="12" x2="19" y2="12" />
-                          <polyline points="12 5 19 12 12 19" />
-                        </svg>
-                      </a>
-                      <div className="flex space-x-4 lg:space-x-6">
-                {SOCIALS.map((social) => (
-                    <a
-                        key={social.name}
-                        href={social.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-12 h-12 rounded-lg border border-slate-200 dark:border-slate-800
+                            View My Work
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                className="w-4 h-4 ml-2"
+                            >
+                                <line x1="3" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </a>
+                        <div className="flex space-x-4 lg:space-x-6">
+                            {SOCIALS.map((social) => (
+                                <a
+                                    key={social.name}
+                                    href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-12 h-12 rounded-lg border border-slate-200 dark:border-slate-800
                         flex items-center justify-center
                         hover:glow-indigo dark:hover:glow-red
                         transition-[border-color] duration-300
                         text-gray-600 dark:text-gray-400
                         hover:text-black dark:hover:text-white"
-                        aria-label={social.name}
-                    >
-                        {social.icon}
-                    </a>
-                ))}
-            </div>
+                                    aria-label={social.name}
+                                >
+                                    {social.icon}
+                                </a>
+                            ))}
+                        </div>
                     </div>
                 </div>
 

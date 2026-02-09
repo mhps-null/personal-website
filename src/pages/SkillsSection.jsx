@@ -14,8 +14,18 @@ const SKILLS_DATA = [
     {
         title: "Software Engineering",
         description:
-            "Desid scalable logic.",
-        skills: ["Programming", "Problem Solving", "Debugging"],
+            "Designing and building scalable software solutions.",
+        skills: [
+          "Python",
+          "C",
+          "C++",
+          "C#",
+          "JavaScript",
+          "HTML",
+          "CSS",
+          "React",
+          "Tailwind CSS",
+        ],
         icon: (
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +47,7 @@ const SKILLS_DATA = [
         title: "Image & Video Editing",
         description:
             "Editing visual content with attention to composition and clarity.",
-        skills: ["Photo Editing", "Video Editing", "Color Grading"],
+        skills: ["DaVinci Resolve", "Capcut", "GIMP", "Krita" ,"PicsArt"],
         icon: (
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +70,13 @@ const SKILLS_DATA = [
         title: "PC Builder & System",
         description:
             "Assembling, configuring, and troubleshooting computer systems.",
-        skills: ["PC Assembly", "Hardware Setup", "Troubleshooting"],
+        skills: [
+                  "PC Assembly",
+                  "Hardware Setup",
+                  "Troubleshooting",
+                  "BIOS Configuration",
+                  "OS Installation",
+                ],
         icon: (
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -83,7 +99,13 @@ const SKILLS_DATA = [
         title: "Game Development",
         description:
             "Developing games with structured logic and scene-based systems.",
-        skills: ["Godot Engine", "GDScript", "Game Logic"],
+        skills: [
+                  "Godot Engine",
+                  "GDScript",
+                  "Game Logic",
+                  "Scene Management",
+                  "State Machine",
+                ],
         icon: (
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -120,7 +142,7 @@ const SkillsSection = () => {
                 </p>
 
                 <motion.div
-                    className="grid gap-6 md:grid-cols-2 lg:grid-cols-4"
+                    className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 items-stretch"
                     variants={containerVariants}
                     initial="hidden"
                     animate="show"

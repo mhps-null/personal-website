@@ -1,9 +1,10 @@
 const CardProjects = ({ image, title, description, tags = [] }) => {
     return (
         <div
-            className="rounded-xl border border-slate-200 dark:border-slate-800 transition-colors duration-300
+            className="rounded-xl border border-slate-200 dark:border-slate-800
+                transition-colors duration-300
                  overflow-hidden text-center shadow-lg
-                  hover:-translate-y-1
+                  hover:-translate-y-1 hover:glow-indigo dark:hover:glow-red
                  h-full flex flex-col"
         >
             <div className="relative aspect-video w-full overflow-hidden shrink-0">
