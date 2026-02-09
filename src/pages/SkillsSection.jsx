@@ -115,7 +115,9 @@ const SkillsSection = () => {
                     My Skills
                 </h2>
 
-                <p className="w-3/4 text-center text-slate-600 dark:text-slate-400 mb-12">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe voluptatum laborum corporis tempore, fugit voluptas beatae maxime ut nemo vero, pariatur velit illo. Laudantium nihil aliquam laborum, quisquam ipsa consequatur.</p>
+                <p className="w-3/4 text-center text-slate-600 dark:text-slate-400 mb-12">
+                I focus on building structured, efficient, and maintainable solutions across software, systems, and creative domains. My skill set combines logical problem-solving, hands-on technical work, and practical experience in development tools and workflows.
+                </p>
 
                 <motion.div
                     className="grid gap-6 md:grid-cols-2 lg:grid-cols-4"

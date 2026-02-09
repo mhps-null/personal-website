@@ -1,4 +1,35 @@
+import { useState } from "react"
+
 const ContactSection = () => {
+    const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  })
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = async (e) => {
+  e.preventDefault()
+
+  const res = await fetch(
+    "https://contact-form-worker.mhps-null.workers.dev",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    }
+  )
+
+  if (res.ok) {
+    alert("Message sent")
+    setForm({ name: "", email: "", message: "" })
+  } else {
+    alert("Failed to send message")
+  }
+}
 
     return (<section
         id="contact"
@@ -23,7 +54,7 @@ const ContactSection = () => {
                         "
             >
                 <div className="p-6">
-                    <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                    <form className="space-y-4" onSubmit={handleSubmit}>
                         <div className="space-y-2">
                             <label
                                 htmlFor="name"
@@ -34,6 +65,8 @@ const ContactSection = () => {
                             <input
                                 id="name"
                                 name="name"
+                                value={form.name}
+                                onChange={handleChange}
                                 type="text"
                                 required
                                 placeholder="Your name"
@@ -55,6 +88,8 @@ const ContactSection = () => {
                             <input
                                 id="email"
                                 name="email"
+                                value={form.email}
+                                onChange={handleChange}
                                 type="email"
                                 required
                                 placeholder="you@example.com"
@@ -76,6 +111,8 @@ const ContactSection = () => {
                             <textarea
                                 id="message"
                                 name="message"
+                                value={form.message}
+                                onChange={handleChange}
                                 required
                                 rows={4}
                                 placeholder="Write your message..."
