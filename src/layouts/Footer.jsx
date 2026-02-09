@@ -63,7 +63,7 @@ const SOCIALS = [
 
 const Footer = () => {
 
-    return (<footer className="fixed bottom-0 left-0 w-full border-t border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300  backdrop-blur-3xl">
+    return (<footer className="fixed bottom-0 left-0 w-full border-t border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 transition-colors duration-300 backdrop-blur-3xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8 max-md:flex-col gap-4">
             <div className="text-sm text-center">&copy; {new Date().getFullYear()} Muhammad Haris Putra Sulastianto. All rights reserved.</div>
             <div className="flex space-x-6">
@@ -73,7 +73,7 @@ const Footer = () => {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
+                        className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-300"
                         aria-label={social.name}
                     >
                         {social.icon}

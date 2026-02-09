@@ -104,7 +104,9 @@ const ContactSection = () => {
                         <p className="text-center text-sm text-slate-600 dark:text-slate-400">
                             Or email me directly at{" "}
                             <a
-                                href="mailto:mharisputras.work@gmail.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href="https://mail.google.com/mail/?view=cm&to=mharisputras.work@gmail.com"
                                 className="
                                           font-medium
                                           text-indigo-600 dark:text-red-400
