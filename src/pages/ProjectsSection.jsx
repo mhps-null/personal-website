@@ -65,7 +65,11 @@ const ProjectsSection = () => {
                     My Projects
                 </h2>
 
-                <p className="w-3/4 text-center text-slate-600 dark:text-slate-400 mb-12">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe voluptatum laborum corporis tempore, fugit voluptas beatae maxime ut nemo vero, pariatur velit illo. Laudantium nihil aliquam laborum, quisquam ipsa consequatur.</p>
+                <p className="w-3/4 text-center text-slate-600 dark:text-slate-400 mb-12">
+                These projects show what I’ve worked on across web development, UI exploration,
+                creative editing, and building my own PCs from scratch. They reflect how I enjoy
+                experimenting, solving problems, and turning ideas into practical results.
+                </p>
 
                 <motion.div
                     className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
