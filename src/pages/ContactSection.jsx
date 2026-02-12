@@ -2,34 +2,34 @@ import { useState } from "react"
 
 const ContactSection = () => {
     const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  })
+        name: "",
+        email: "",
+        message: "",
+    })
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value })
-  }
-
-  const handleSubmit = async (e) => {
-  e.preventDefault()
-
-  const res = await fetch(
-    "https://contact-form-worker.mhps-null.workers.dev",
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
+    const handleChange = (e) => {
+        setForm({ ...form, [e.target.name]: e.target.value })
     }
-  )
 
-  if (res.ok) {
-    alert("Message sent")
-    setForm({ name: "", email: "", message: "" })
-  } else {
-    alert("Failed to send message")
-  }
-}
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+
+        const res = await fetch(
+            "https://contact-form-worker.mhps-null.workers.dev",
+            {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(form),
+            }
+        )
+
+        if (res.ok) {
+            alert("Message sent")
+            setForm({ name: "", email: "", message: "" })
+        } else {
+            alert("Failed to send message")
+        }
+    }
 
     return (<section
         id="contact"
@@ -40,7 +40,9 @@ const ContactSection = () => {
                 Contact me
             </h2>
 
-            <p className="w-3/4 text-center text-slate-600 dark:text-slate-400 mb-12">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe voluptatum laborum corporis tempore, fugit voluptas beatae maxime ut nemo vero, pariatur velit illo. Laudantium nihil aliquam laborum, quisquam ipsa consequatur.</p>
+            <p className="w-3/4 text-center text-slate-600 dark:text-slate-400 mb-12">
+                If you’d like to talk about anything, feel free to reach out.
+            </p>
 
             <div
                 className="

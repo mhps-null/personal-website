@@ -65,13 +65,12 @@ const ProjectsSection = () => {
                     My Projects
                 </h2>
 
-                <p className="w-3/4 text-center text-slate-600 dark:text-slate-400 mb-12">
-                These projects show what I’ve worked on across web development, UI exploration,
-                creative editing, and building my own PCs from scratch. They reflect how I enjoy
-                experimenting, solving problems, and turning ideas into practical results.
+                {/* <p className="w-3/4 text-center text-slate-600 dark:text-slate-400 mb-12"> */}
+                <p className="text-3xl text-center text-red-500 mb-12">
+                    WORK IN PROGRESS (WIP)
                 </p>
 
-                <motion.div
+                {/* <motion.div
                     className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
                     variants={containerVariants}
                     initial="hidden"
@@ -100,7 +99,7 @@ const ProjectsSection = () => {
                             />
                         </motion.div>
                     ))}
-                </motion.div>
+                </motion.div> */}
 
             </div>
         </section>

@@ -16,15 +16,14 @@ const SKILLS_DATA = [
         description:
             "Designing and building scalable software solutions.",
         skills: [
-          "Python",
-          "C",
-          "C++",
-          "C#",
-          "JavaScript",
-          "HTML",
-          "CSS",
-          "React",
-          "Tailwind CSS",
+            "Python",
+            "C",
+            "C++",
+            "C#",
+            "JavaScript",
+            "Java",
+            "React",
+            "Tailwind CSS",
         ],
         icon: (
             <svg
@@ -47,7 +46,7 @@ const SKILLS_DATA = [
         title: "Image & Video Editing",
         description:
             "Editing visual content with attention to composition and clarity.",
-        skills: ["DaVinci Resolve", "Capcut", "GIMP", "Krita" ,"PicsArt"],
+        skills: ["DaVinci Resolve", "Capcut", "GIMP", "Krita", "PicsArt"],
         icon: (
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -71,12 +70,12 @@ const SKILLS_DATA = [
         description:
             "Assembling, configuring, and troubleshooting computer systems.",
         skills: [
-                  "PC Assembly",
-                  "Hardware Setup",
-                  "Troubleshooting",
-                  "BIOS Configuration",
-                  "OS Installation",
-                ],
+            "PC Assembly",
+            "Hardware Setup",
+            "Troubleshooting",
+            "BIOS Configuration",
+            "OS Installation",
+        ],
         icon: (
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -100,12 +99,12 @@ const SKILLS_DATA = [
         description:
             "Developing games with structured logic and scene-based systems.",
         skills: [
-                  "Godot Engine",
-                  "GDScript",
-                  "Game Logic",
-                  "Scene Management",
-                  "State Machine",
-                ],
+            "Godot Engine",
+            "GDScript",
+            "Game Logic",
+            "Scene Management",
+            "State Machine",
+        ],
         icon: (
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -138,7 +137,7 @@ const SkillsSection = () => {
                 </h2>
 
                 <p className="w-3/4 text-center text-slate-600 dark:text-slate-400 mb-12">
-                I focus on building structured, efficient, and maintainable solutions across software, systems, and creative domains. My skill set combines logical problem-solving, hands-on technical work, and practical experience in development tools and workflows.
+                    My soft skills were developed through curiosity and a strong willingness to take initiative, while my hard skills were built through formal and structured learning.
                 </p>
 
                 <motion.div
