@@ -46,7 +46,7 @@ const SKILLS_DATA = [
         title: "Image & Video Editing",
         description:
             "Editing visual content with attention to composition and clarity.",
-        skills: ["DaVinci Resolve", "Capcut", "GIMP", "Krita", "PicsArt"],
+        skills: ["DaVinci Resolve", "Capcut", "Kdenlive", "GIMP", "Krita", "PicsArt"],
         icon: (
             <svg
                 xmlns="http://www.w3.org/2000/svg"
