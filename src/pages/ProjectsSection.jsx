@@ -1,6 +1,12 @@
 import { motion } from "framer-motion"
 import CardProjects from "../components/CardProjects"
 import projectImg from "../assets/Haris.png"
+import queensImg from "../assets/QueensSolver.png"
+import pcImg from "../assets/PC1.jpg"
+import osImg from "../assets/OS.png"
+import rplImg from "../assets/RPL.png"
+import algeo1Img from "../assets/ALGEO1.png"
+import algeo2Img from "../assets/ALGEO2.png"
 
 const containerVariants = {
     hidden: {},
@@ -13,46 +19,52 @@ const containerVariants = {
 
 const PROJECTS_DATA = [
     {
-        title: "Portfolio Website",
+        title: "Queens LinkedIn Solver",
         description:
-            "Personal portfolio website built with modern frontend stack.",
-        tags: ["React", "Tailwind CSS", "Framer Motion", "Edan"],
-        image: projectImg,
+            "Dekstop app game solver uses brute-force algorithm.",
+        tags: ["C++","Qt","CMake","Ninja"],
+        link: "https://github.com/mhps-null/Tucil1_13524053",
+        image: queensImg,
     },
     {
-        title: "UI Components",
+        title: "Built & Configured Custom PC",
         description:
-            "Reusable UI components with responsive layout and animation.",
-        tags: ["React", "Tailwind CSS"],
-        image: projectImg,
+            "Personally built and configured my custom PC from the ground up.",
+        tags: ["RTX 5070", "R7 9700X","H24G30Q"],
+        link: "#", // WIP
+        image: pcImg,
     },
     {
-        title: "Game Prototype",
+        title: "Minimal x86 OS",
         description:
-            "Game prototype developed using Godot Engine.",
-        tags: ["Godot", "GDScript"],
-        image: projectImg,
+            "Built a basic operating system in C with custom kernel and low-level system handling.",
+        tags: ["C","x86", "OSDev", "QEMU"],
+        link: "https://github.com/mhps-null/Operating-System",
+        image: osImg,
     },
     {
-        title: "Editing Showcase",
+        title: "Marketplace & Donation App",
         description:
-            "Image & video editing showcase for digital content.",
-        tags: ["Editing", "Design"],
-        image: projectImg,
+            "Marketplace and donation system using MVC architecture and relational data modeling.",
+        tags: ["Flet", "PostgreSQL","MVC"],
+        link: "https://github.com/mhps-null/Software-Engineering-ITB",
+        image: rplImg,
     },
     {
-        title: "PC Build Project",
+        title: "Matrix Computation System",
         description:
-            "Custom PC build with optimized airflow and performance.",
-        tags: ["Hardware", "System"],
-        image: projectImg,
+            "Matrix computation system implementing core linear algebra algorithms and numerical methods.",
+        tags: ["Java","JavaFX","Maven","Scene Builder"],
+        link: "#", // WIP
+        image: algeo1Img,
     },
     {
-        title: "Experimental UI",
+        title: "Digital Library System",
         description:
-            "UI experiments with animation and interaction.",
-        tags: ["UI", "Animation"],
-        image: projectImg,
+            "Semantic book retrieval system using LSA and PCA for search and recommendation.",
+        tags: ["Next.js","FastAPI","Docker","Python"],
+        link: "#", // WIP
+        image: algeo2Img,
     },
 ]
 
@@ -65,12 +77,11 @@ const ProjectsSection = () => {
                     My Projects
                 </h2>
 
-                {/* <p className="w-3/4 text-center text-slate-600 dark:text-slate-400 mb-12"> */}
-                <p className="text-3xl text-center text-red-500 mb-12">
-                    WORK IN PROGRESS (WIP)
+                <p className="w-3/4 text-center text-slate-600 dark:text-slate-400 mb-12">
+                    Here are selected projects I’ve built.
                 </p>
 
-                {/* <motion.div
+                <motion.div
                     className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
                     variants={containerVariants}
                     initial="hidden"
@@ -87,6 +98,7 @@ const ProjectsSection = () => {
                             <CardProjects
                                 title={project.title}
                                 description={project.description}
+                                link={project.link}
                                 tags={project.tags}
                                 image={
                                     <img
@@ -99,7 +111,7 @@ const ProjectsSection = () => {
                             />
                         </motion.div>
                     ))}
-                </motion.div> */}
+                </motion.div>
 
             </div>
         </section>

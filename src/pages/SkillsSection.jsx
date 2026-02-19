@@ -137,7 +137,7 @@ const SkillsSection = () => {
                 </h2>
 
                 <p className="w-3/4 text-center text-slate-600 dark:text-slate-400 mb-12">
-                    My soft skills were developed through curiosity and a strong willingness to take initiative, while my hard skills were built through formal and structured learning.
+                    Soft skills from curiosity and initiative; hard skills from structured learning.
                 </p>
 
                 <motion.div

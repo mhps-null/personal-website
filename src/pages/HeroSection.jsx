@@ -10,7 +10,7 @@ const HERO_DATA = {
         "Computer Systems Enthusiast",
     ],
     description:
-        "A computer science student doing what excites them and putting their best into it.",
+        "A Computer science student at Institut Teknologi Bandung, pursuing what excites me and giving my best in every endeavor.",
 }
 
 const SOCIALS = [

@@ -1,4 +1,4 @@
-const CardProjects = ({ image, title, description, tags = [] }) => {
+const CardProjects = ({ image, title, description, link, tags = [] }) => {
     return (
         <div
             className="rounded-xl border border-slate-200 dark:border-slate-800
@@ -37,7 +37,7 @@ const CardProjects = ({ image, title, description, tags = [] }) => {
                 )}
 
                 <a
-                    href="#"
+                    href={link}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-auto inline-flex w-full items-center justify-center
