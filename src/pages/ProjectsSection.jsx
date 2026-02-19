@@ -22,7 +22,7 @@ const PROJECTS_DATA = [
         title: "Queens LinkedIn Solver",
         description:
             "Dekstop app game solver uses brute-force algorithm.",
-        tags: ["C++","Qt","CMake","Ninja"],
+        tags: ["C++", "Qt", "CMake", "Ninja"],
         link: "https://github.com/mhps-null/Tucil1_13524053",
         image: queensImg,
     },
@@ -30,7 +30,7 @@ const PROJECTS_DATA = [
         title: "Built & Configured Custom PC",
         description:
             "Personally built and configured my custom PC from the ground up.",
-        tags: ["RTX 5070", "R7 9700X","H24G30Q"],
+        tags: ["RTX 5070", "R7 9700X", "H24G30Q"],
         link: "#", // WIP
         image: pcImg,
     },
@@ -38,7 +38,7 @@ const PROJECTS_DATA = [
         title: "Minimal x86 OS",
         description:
             "Built a basic operating system in C with custom kernel and low-level system handling.",
-        tags: ["C","x86", "OSDev", "QEMU"],
+        tags: ["C", "x86", "OSDev", "QEMU"],
         link: "https://github.com/mhps-null/Operating-System",
         image: osImg,
     },
@@ -46,7 +46,7 @@ const PROJECTS_DATA = [
         title: "Marketplace & Donation App",
         description:
             "Marketplace and donation system using MVC architecture and relational data modeling.",
-        tags: ["Flet", "PostgreSQL","MVC"],
+        tags: ["Flet", "PostgreSQL", "MVC"],
         link: "https://github.com/mhps-null/Software-Engineering-ITB",
         image: rplImg,
     },
@@ -54,16 +54,16 @@ const PROJECTS_DATA = [
         title: "Matrix Computation System",
         description:
             "Matrix computation system implementing core linear algebra algorithms and numerical methods.",
-        tags: ["Java","JavaFX","Maven","Scene Builder"],
-        link: "#", // WIP
+        tags: ["Java", "JavaFX", "Maven", "Scene Builder"],
+        link: "https://github.com/mhps-null/Matrix-Computation-System",
         image: algeo1Img,
     },
     {
         title: "Digital Library System",
         description:
             "Semantic book retrieval system using LSA and PCA for search and recommendation.",
-        tags: ["Next.js","FastAPI","Docker","Python"],
-        link: "#", // WIP
+        tags: ["Next.js", "FastAPI", "Docker", "Python"],
+        link: "https://github.com/mhps-null/Semantic-Digital-Library",
         image: algeo2Img,
     },
 ]
