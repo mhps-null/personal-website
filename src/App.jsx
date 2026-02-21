@@ -5,6 +5,7 @@ import SkillsSection from "./pages/SkillsSection"
 import ProjectsSection from "./pages/ProjectsSection"
 import ContactSection from "./pages/ContactSection"
 import { motion } from "framer-motion"
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
     </main>
     <Footer />
 
+    <Analytics />
   </div >)
 }
 
