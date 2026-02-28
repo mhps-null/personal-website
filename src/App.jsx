@@ -6,6 +6,7 @@ import ProjectsSection from "./pages/ProjectsSection"
 import ContactSection from "./pages/ContactSection"
 import { motion } from "framer-motion"
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
     </main>
     <Footer />
 
+    <SpeedInsights />
     <Analytics />
   </div >)
 }
