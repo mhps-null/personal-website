@@ -50,6 +50,7 @@ export default function BookingModal({
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [confirmedBooking, setConfirmedBooking] = useState(null);
+  const [serverError, setServerError] = useState(null);
 
   const activeMeetUrl = meetingType === "online" ? OFFICIAL_MEET_URL : null;
 
@@ -61,6 +62,19 @@ export default function BookingModal({
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setServerError(null);
+
+    // Strict frontend validation: 07:00 to 21:00 WIB
+    const [startH, startM] = (bookingDetails.startTime || "00:00").split(":").map(Number);
+    const [endH, endM] = (bookingDetails.endTime || "00:00").split(":").map(Number);
+    const startMin = startH * 60 + startM;
+    const endMin = endH * 60 + endM;
+
+    if (startMin < 420 || endMin > 1260 || startMin >= endMin) {
+      setServerError("Rentang waktu tidak valid. Jadwal harus berada di antara pukul 07:00 dan 21:00 WIB.");
+      return;
+    }
+
     setIsSubmitting(true);
 
     const payload = {
@@ -89,25 +103,23 @@ export default function BookingModal({
         }
       );
 
-      let meetUrl = activeMeetUrl;
       if (response.ok) {
         const data = await response.json();
-        if (data.booking?.meetUrl) meetUrl = data.booking.meetUrl;
+        const meetUrl = data.booking?.meetUrl || activeMeetUrl;
+        const confirmedData = {
+          ...payload,
+          meetUrl,
+        };
+        setConfirmedBooking(confirmedData);
+        if (onBookingSuccess) onBookingSuccess(confirmedData);
+      } else {
+        const errData = await response.json().catch(() => ({}));
+        setServerError(
+          errData.error || "Gagal menjadwalkan janji temu. Waktu mungkin sudah terisi atau tidak valid."
+        );
       }
-
-      const confirmedData = {
-        ...payload,
-        meetUrl,
-      };
-
-      setConfirmedBooking(confirmedData);
-      if (onBookingSuccess) onBookingSuccess(confirmedData);
     } catch {
-      // Fallback for demonstration
-      setConfirmedBooking({
-        ...payload,
-        meetUrl: activeMeetUrl,
-      });
+      setServerError("Terjadi kendala saat menghubungi server kalender. Silakan periksa koneksi internet Anda.");
     } finally {
       setIsSubmitting(false);
     }
@@ -115,6 +127,7 @@ export default function BookingModal({
 
   const handleCloseAll = () => {
     setConfirmedBooking(null);
+    setServerError(null);
     setFormData({ name: "", email: "", location: "", topic: "", notes: "" });
     setMeetingType("online");
     onClose();
@@ -502,6 +515,16 @@ export default function BookingModal({
                     className="w-full px-3.5 py-2 rounded-xl text-sm bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white outline-none focus:border-blue-500 dark:focus:border-red-500 transition-colors resize-none"
                   />
                 </div>
+
+                {/* Server Error Alert Banner */}
+                {serverError && (
+                  <div className="p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-600 dark:text-red-400 text-xs flex items-start gap-2.5">
+                    <svg className="w-4 h-4 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                    <span className="font-medium leading-relaxed">{serverError}</span>
+                  </div>
+                )}
 
                 {/* Submit Button */}
                 <button

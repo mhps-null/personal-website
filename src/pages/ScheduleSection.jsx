@@ -63,6 +63,15 @@ export default function ScheduleSection() {
     setIsModalOpen(true);
   };
 
+  const handleBookingSuccess = (confirmedData) => {
+    if (confirmedData?.startTime && confirmedData?.endTime) {
+      setBusySlots((prev) => [
+        ...prev,
+        { start: confirmedData.startTime, end: confirmedData.endTime },
+      ]);
+    }
+  };
+
   return (
     <section
       id="schedule"
@@ -108,6 +117,7 @@ export default function ScheduleSection() {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         bookingDetails={activeBooking}
+        onBookingSuccess={handleBookingSuccess}
       />
     </section>
   );
