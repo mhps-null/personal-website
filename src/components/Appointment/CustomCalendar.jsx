@@ -11,6 +11,17 @@ export default function CustomCalendar({ selectedDate, onSelectDate }) {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
+  // Check if today's operating hours (07:00 - 21:00 WIB) have already ended
+  const now = new Date();
+  const wibTime = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Asia/Jakarta",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  }).format(now);
+  const [nowH, nowM] = wibTime.split(":").map(Number);
+  const isOperatingEndedToday = nowH * 60 + nowM >= 21 * 60 - 15; // >= 20:45 WIB
+
   const [currentMonth, setCurrentMonth] = useState(
     selectedDate ? new Date(selectedDate) : new Date()
   );
@@ -49,8 +60,8 @@ export default function CustomCalendar({ selectedDate, onSelectDate }) {
     dateObj.setHours(0, 0, 0, 0);
 
     const dateStr = formatDateStr(year, month, day);
-    const isPast = dateObj < today;
     const isToday = dateObj.getTime() === today.getTime();
+    const isPast = dateObj < today || (isToday && isOperatingEndedToday);
     const isSelected = selectedDate === dateStr;
 
     daysGrid.push({

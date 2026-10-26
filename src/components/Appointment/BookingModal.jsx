@@ -71,7 +71,14 @@ export default function BookingModal({
     const endMin = endH * 60 + endM;
 
     if (startMin < 420 || endMin > 1260 || startMin >= endMin) {
-      setServerError("Rentang waktu tidak valid. Jadwal harus berada di antara pukul 07:00 dan 21:00 WIB.");
+      setServerError("Invalid time range. Appointments must be scheduled between 07:00 and 21:00 WIB.");
+      return;
+    }
+
+    // Strict Anti-Past Check (WIB)
+    const requestedTimestamp = Date.parse(`${bookingDetails.date}T${bookingDetails.startTime}:00+07:00`);
+    if (!isNaN(requestedTimestamp) && requestedTimestamp < Date.now() - 60000) {
+      setServerError("This appointment time has already passed. Please choose an upcoming time.");
       return;
     }
 
@@ -115,11 +122,11 @@ export default function BookingModal({
       } else {
         const errData = await response.json().catch(() => ({}));
         setServerError(
-          errData.error || "Gagal menjadwalkan janji temu. Waktu mungkin sudah terisi atau tidak valid."
+          errData.error || "Failed to schedule appointment. Time slot may be occupied or invalid."
         );
       }
     } catch {
-      setServerError("Terjadi kendala saat menghubungi server kalender. Silakan periksa koneksi internet Anda.");
+      setServerError("Unable to connect to calendar server. Please check your internet connection.");
     } finally {
       setIsSubmitting(false);
     }
@@ -482,7 +489,7 @@ export default function BookingModal({
                       required
                       value={formData.location}
                       onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                      placeholder="e.g. Labtek V ITB / Perpustakaan Pusat / Cafe"
+                      placeholder="e.g. Labtek V ITB / Campus Library / Cafe"
                       className="w-full px-3.5 py-2 rounded-xl text-sm bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white outline-none focus:border-blue-500 dark:focus:border-red-500 transition-colors"
                     />
                   </div>
@@ -497,7 +504,7 @@ export default function BookingModal({
                     type="text"
                     value={formData.topic}
                     onChange={(e) => setFormData({ ...formData, topic: e.target.value })}
-                    placeholder="e.g. Project Consultation / Diskusi Kuliah"
+                    placeholder="e.g. Project Consultation / Discussion"
                     className="w-full px-3.5 py-2 rounded-xl text-sm bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white outline-none focus:border-blue-500 dark:focus:border-red-500 transition-colors"
                   />
                 </div>

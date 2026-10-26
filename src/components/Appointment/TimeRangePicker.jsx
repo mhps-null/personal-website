@@ -131,6 +131,50 @@ function NumericTimeInput({ value, onChange }) {
   );
 }
 
+// Helper: Get current WIB date string (YYYY-MM-DD) and current WIB minutes from midnight
+const getWibNow = () => {
+  const now = new Date();
+  const dateStr = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Jakarta",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(now);
+
+  const timeStr = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Asia/Jakarta",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  }).format(now);
+
+  const [h, m] = timeStr.split(":").map(Number);
+  return {
+    dateStr,
+    timeStr,
+    nowMinutes: h * 60 + m,
+  };
+};
+
+// Calculate initial slot based on date & current time
+const getInitialSlot = (date) => {
+  const { dateStr, nowMinutes } = getWibNow();
+  if (date === dateStr) {
+    // If today: pick next available 30-min block with 15m advance buffer
+    const nextStart = Math.max(7 * 60, Math.ceil((nowMinutes + 15) / 30) * 30);
+    if (nextStart < 20 * 60) {
+      const startH = String(Math.floor(nextStart / 60)).padStart(2, "0");
+      const startM = String(nextStart % 60).padStart(2, "0");
+      const endVal = nextStart + 60;
+      const endH = String(Math.floor(endVal / 60)).padStart(2, "0");
+      const endM = String(endVal % 60).padStart(2, "0");
+      return { start: `${startH}:${startM}`, end: `${endH}:${endM}` };
+    }
+  }
+  // Default for future dates
+  return { start: "10:00", end: "11:00" };
+};
+
 export default function TimeRangePicker({
   selectedDate,
   busySlots = [],
@@ -140,15 +184,32 @@ export default function TimeRangePicker({
   const dayStartMinutes = 7 * 60; // 07:00
   const dayEndMinutes = 21 * 60; // 21:00
 
-  // Default selection: 13:00 to 14:00 (1 hour)
-  const [startTime, setStartTime] = useState("13:00");
-  const [endTime, setEndTime] = useState("14:00");
+  // Smart default selection based on current date & time
+  const [startTime, setStartTime] = useState(() => getInitialSlot(selectedDate).start);
+  const [endTime, setEndTime] = useState(() => getInitialSlot(selectedDate).end);
 
-  // Check if range conflicts with any busy slots or operating boundaries (07:00 - 21:00)
+  // Check if range conflicts with any busy slots, operating boundaries (07:00 - 21:00), or past times
   const conflict = useMemo(() => {
+    const { dateStr, nowMinutes } = getWibNow();
     const startMin = timeToMinutes(startTime);
     const endMin = timeToMinutes(endTime);
 
+    // 1. Anti-Past Date Check
+    if (selectedDate < dateStr) {
+      return "The selected date has already passed. Please choose a future date";
+    }
+
+    // 2. Anti-Past Time Check for Today
+    if (selectedDate === dateStr) {
+      if (nowMinutes >= dayEndMinutes - 15) {
+        return "Operating hours for today have ended (07:00 – 21:00 WIB). Please select another date";
+      }
+      if (startMin < nowMinutes) {
+        return `Start time (${startTime} WIB) has already passed`;
+      }
+    }
+
+    // 3. Operating boundaries
     if (startMin < dayStartMinutes) {
       return "Start time cannot be earlier than 07:00 WIB";
     }
@@ -169,18 +230,19 @@ export default function TimeRangePicker({
       return "Maximum appointment duration is 4 hours";
     }
 
+    // 4. Overlap with Google Calendar busy slots
     for (const slot of busySlots) {
       const slotStart = timeToMinutes(slot.start);
       const slotEnd = timeToMinutes(slot.end);
 
       // Overlap condition
       if (startMin < slotEnd && endMin > slotStart) {
-        return `Overlaps with busy schedule (${slot.start} - ${slot.end})`;
+        return `Overlaps with busy schedule (${slot.start} – ${slot.end} WIB)`;
       }
     }
 
     return null;
-  }, [startTime, endTime, busySlots, dayStartMinutes, dayEndMinutes]);
+  }, [selectedDate, startTime, endTime, busySlots, dayStartMinutes, dayEndMinutes]);
 
   // Timeline representation percentage
   const totalDayMins = dayEndMinutes - dayStartMinutes;

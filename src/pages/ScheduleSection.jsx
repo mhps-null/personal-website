@@ -4,16 +4,41 @@ import TimeRangePicker from "../components/Appointment/TimeRangePicker";
 import BookingModal from "../components/Appointment/BookingModal";
 
 export default function ScheduleSection() {
-  // Format today's date as YYYY-MM-DD
-  const getTodayStr = () => {
-    const d = new Date();
-    const y = d.getFullYear();
-    const m = String(d.getMonth() + 1).padStart(2, "0");
-    const day = String(d.getDate()).padStart(2, "0");
-    return `${y}-${m}-${day}`;
+  // Get initial date in WIB. If today's operating hours have ended (>= 20:45 WIB), default to tomorrow!
+  const getInitialDateStr = () => {
+    const now = new Date();
+    const wibDate = new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Asia/Jakarta",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    }).format(now);
+
+    const wibTime = new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Asia/Jakarta",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    }).format(now);
+
+    const [h, m] = wibTime.split(":").map(Number);
+    const mins = h * 60 + m;
+
+    // Past 20:45 WIB: Operating window (07:00 - 21:00) ended for today, select tomorrow
+    if (mins >= 20 * 60 + 45) {
+      const tomorrow = new Date(now.getTime() + 24 * 3600 * 1000);
+      return new Intl.DateTimeFormat("en-CA", {
+        timeZone: "Asia/Jakarta",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      }).format(tomorrow);
+    }
+
+    return wibDate;
   };
 
-  const [selectedDate, setSelectedDate] = useState(getTodayStr());
+  const [selectedDate, setSelectedDate] = useState(getInitialDateStr);
   const [busySlots, setBusySlots] = useState([]);
   const [activeBooking, setActiveBooking] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -103,6 +128,7 @@ export default function ScheduleSection() {
             {/* Right Column: Visual Timeline & Time Range Picker (7 cols) */}
             <div className="lg:col-span-7">
               <TimeRangePicker
+                key={selectedDate}
                 selectedDate={selectedDate}
                 busySlots={busySlots}
                 onConfirmRange={handleConfirmRange}
