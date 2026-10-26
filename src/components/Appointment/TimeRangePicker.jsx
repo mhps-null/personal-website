@@ -88,7 +88,7 @@ function NumericTimeInput({ value, onChange }) {
   };
 
   return (
-    <div className="relative inline-flex items-center justify-center">
+    <div className="inline-flex items-center justify-center">
       {/* Box 1: Hours Input */}
       <input
         ref={hoursRef}
@@ -100,11 +100,11 @@ function NumericTimeInput({ value, onChange }) {
         onBlur={handleHoursBlur}
         onFocus={(e) => e.target.select()}
         placeholder="HH"
-        className="w-14 sm:w-16 h-11 text-center font-mono text-lg font-bold rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-100 focus:border-blue-500 dark:focus:border-red-500 focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-red-500/20 outline-none shadow-sm transition-all"
+        className="w-10 xs:w-12 sm:w-14 md:w-16 h-9 sm:h-11 text-center font-mono text-sm sm:text-base md:text-lg font-bold rounded-lg sm:rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-100 focus:border-blue-500 dark:focus:border-red-500 focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-red-500/20 outline-none shadow-sm transition-all"
       />
 
       {/* Static Colon separator centered */}
-      <span className="w-6 text-center text-xl font-bold font-mono text-slate-400 dark:text-slate-500 select-none">
+      <span className="w-3 sm:w-5 text-center text-base sm:text-xl font-bold font-mono text-slate-400 dark:text-slate-500 select-none">
         :
       </span>
 
@@ -120,11 +120,11 @@ function NumericTimeInput({ value, onChange }) {
         onFocus={(e) => e.target.select()}
         onKeyDown={handleMinutesKeyDown}
         placeholder="MM"
-        className="w-14 sm:w-16 h-11 text-center font-mono text-lg font-bold rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-100 focus:border-blue-500 dark:focus:border-red-500 focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-red-500/20 outline-none shadow-sm transition-all"
+        className="w-10 xs:w-12 sm:w-14 md:w-16 h-9 sm:h-11 text-center font-mono text-sm sm:text-base md:text-lg font-bold rounded-lg sm:rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-100 focus:border-blue-500 dark:focus:border-red-500 focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-red-500/20 outline-none shadow-sm transition-all"
       />
 
-      {/* Static WIB positioned to the right without shifting the colon center */}
-      <span className="absolute left-[calc(100%+0.5rem)] text-xs sm:text-sm font-semibold font-mono text-slate-400 dark:text-slate-500 select-none whitespace-nowrap">
+      {/* Static WIB positioned inline */}
+      <span className="text-[10px] sm:text-xs font-semibold font-mono text-slate-400 dark:text-slate-500 select-none ml-1 sm:ml-2">
         WIB
       </span>
     </div>
@@ -195,25 +195,25 @@ export default function TimeRangePicker({
     getTimelinePercent(endTime) - selectedStartPercent;
 
   return (
-    <div className="w-full space-y-6">
+    <div className="w-full space-y-5 sm:space-y-6">
       {/* Header Info */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-4">
         <div>
-          <h4 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-            Schedule for {selectedDate}
-            <span className="text-[11px] font-mono px-2 py-0.5 rounded-md bg-blue-500/10 text-blue-600 dark:bg-red-500/15 dark:text-red-400 border border-blue-500/20 dark:border-red-500/30">
+          <h4 className="text-sm sm:text-base font-bold text-slate-900 dark:text-white flex flex-wrap items-center gap-1.5 sm:gap-2">
+            <span>Schedule for {selectedDate}</span>
+            <span className="text-[10px] sm:text-[11px] font-mono px-2 py-0.5 rounded-md bg-blue-500/10 text-blue-600 dark:bg-red-500/15 dark:text-red-400 border border-blue-500/20 dark:border-red-500/30">
               WIB (GMT+7)
             </span>
           </h4>
-          <p className="text-xs text-slate-500 dark:text-slate-400">
+          <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
             Choose your preferred start and end time.
           </p>
         </div>
 
         {/* Selected Duration Badge */}
-        <div className="text-right">
-          <div className="text-xs font-semibold text-slate-400">Total Duration</div>
-          <div className="text-sm font-bold text-blue-600 dark:text-red-400">
+        <div className="flex items-center justify-between sm:flex-col sm:items-end sm:justify-center bg-slate-50 dark:bg-slate-800/40 sm:bg-transparent sm:dark:bg-transparent p-2 sm:p-0 rounded-lg sm:rounded-none">
+          <div className="text-[11px] sm:text-xs font-semibold text-slate-500 dark:text-slate-400">Total Duration</div>
+          <div className="text-xs sm:text-sm font-bold text-blue-600 dark:text-red-400">
             {formatDuration(startTime, endTime)}
           </div>
         </div>
@@ -221,7 +221,7 @@ export default function TimeRangePicker({
 
       {/* Visual Day Timeline Bar */}
       <div className="space-y-2">
-        <div className="flex justify-between text-[11px] font-mono text-slate-400">
+        <div className="flex justify-between text-[10px] sm:text-[11px] font-mono text-slate-400">
           <span>07:00</span>
           <span>10:30</span>
           <span>14:00</span>
@@ -229,7 +229,7 @@ export default function TimeRangePicker({
           <span>21:00</span>
         </div>
 
-        <div className="relative h-7 w-full rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 overflow-hidden shadow-inner">
+        <div className="relative h-6 sm:h-7 w-full rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 overflow-hidden shadow-inner">
           {/* Busy Slots */}
           {busySlots.map((slot, idx) => {
             const left = getTimelinePercent(slot.start);
@@ -260,28 +260,28 @@ export default function TimeRangePicker({
           />
         </div>
 
-        <div className="flex items-center gap-4 text-[11px] text-slate-500 dark:text-slate-400 pt-1">
+        <div className="flex flex-wrap items-center gap-x-3 sm:gap-x-4 gap-y-1.5 text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400 pt-1">
           <div className="flex items-center gap-1.5">
-            <span className="w-3 h-3 rounded bg-blue-600 dark:bg-red-500" />
+            <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded bg-blue-600 dark:bg-red-500" />
             <span>Your Selection</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="w-3 h-3 rounded bg-red-500/30 border border-red-500/50" />
+            <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded bg-red-500/30 border border-red-500/50" />
             <span>Busy</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="w-3 h-3 rounded bg-slate-200 dark:bg-slate-700" />
+            <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded bg-slate-200 dark:bg-slate-700" />
             <span>Available</span>
           </div>
         </div>
       </div>
 
       {/* Manual Numeric Time Inputs */}
-      <div className="grid grid-cols-2 gap-4 pt-2">
+      <div className="grid grid-cols-2 gap-2 sm:gap-4 pt-2">
         {/* Start Time Numeric Input */}
-        <div className="flex flex-col items-center justify-center text-center space-y-2">
-          <label className="text-sm sm:text-base font-bold text-slate-800 dark:text-slate-100 flex items-center justify-center gap-2">
-            <svg className="w-4 h-4 text-blue-500 dark:text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div className="flex flex-col items-center justify-center text-center space-y-1.5 sm:space-y-2">
+          <label className="text-xs sm:text-base font-bold text-slate-800 dark:text-slate-100 flex items-center justify-center gap-1 sm:gap-2">
+            <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-500 dark:text-red-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             Start Time
@@ -290,9 +290,9 @@ export default function TimeRangePicker({
         </div>
 
         {/* End Time Numeric Input */}
-        <div className="flex flex-col items-center justify-center text-center space-y-2">
-          <label className="text-sm sm:text-base font-bold text-slate-800 dark:text-slate-100 flex items-center justify-center gap-2">
-            <svg className="w-4 h-4 text-indigo-500 dark:text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div className="flex flex-col items-center justify-center text-center space-y-1.5 sm:space-y-2">
+          <label className="text-xs sm:text-base font-bold text-slate-800 dark:text-slate-100 flex items-center justify-center gap-1 sm:gap-2">
+            <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-indigo-500 dark:text-red-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             End Time
@@ -303,7 +303,7 @@ export default function TimeRangePicker({
 
       {/* Conflict Validation / Status */}
       {conflict ? (
-        <div className="p-3.5 rounded-xl bg-red-500/10 border border-red-500/30 text-xs text-red-600 dark:text-red-400 flex items-start gap-2">
+        <div className="p-3 sm:p-3.5 rounded-xl bg-red-500/10 border border-red-500/30 text-xs text-red-600 dark:text-red-400 flex items-start gap-2">
           <svg className="w-4 h-4 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
           </svg>
@@ -312,9 +312,9 @@ export default function TimeRangePicker({
           </div>
         </div>
       ) : (
-        <div className="p-3.5 rounded-xl bg-blue-50/50 dark:bg-red-950/20 border border-blue-200/80 dark:border-red-900/50 text-xs text-blue-700 dark:text-red-300 flex items-center justify-between">
+        <div className="p-3 sm:p-3.5 rounded-xl bg-blue-50/50 dark:bg-red-950/20 border border-blue-200/80 dark:border-red-900/50 text-xs text-blue-700 dark:text-red-300 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
           <div className="flex items-center gap-2">
-            <svg className="w-4 h-4 text-blue-600 dark:text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-4 h-4 text-blue-600 dark:text-red-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
             <span>
@@ -325,7 +325,7 @@ export default function TimeRangePicker({
           <button
             type="button"
             onClick={() => onConfirmRange({ startTime, endTime, duration: formatDuration(startTime, endTime) })}
-            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 dark:bg-red-500 dark:hover:bg-red-600 active:scale-95 text-white font-medium rounded-xl shadow-md hover:glow-indigo dark:hover:glow-red transition-all text-xs whitespace-nowrap"
+            className="w-full sm:w-auto px-5 py-2.5 sm:py-2 bg-blue-600 hover:bg-blue-700 dark:bg-red-500 dark:hover:bg-red-600 active:scale-95 text-white font-medium rounded-xl shadow-md hover:glow-indigo dark:hover:glow-red transition-all text-xs whitespace-nowrap text-center flex items-center justify-center"
           >
             Continue to Book &rarr;
           </button>

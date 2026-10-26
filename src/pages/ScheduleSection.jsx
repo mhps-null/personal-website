@@ -75,23 +75,23 @@ export default function ScheduleSection() {
   return (
     <section
       id="schedule"
-      className="w-full flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8 scroll-mt-20"
+      className="w-full flex items-center justify-center py-12 sm:py-16 px-3.5 sm:px-6 lg:px-8 scroll-mt-20"
     >
-      <div className="w-full max-w-7xl mt-8 mx-auto flex flex-col items-center">
+      <div className="w-full max-w-7xl mt-4 sm:mt-8 mx-auto flex flex-col items-center">
         {/* Header */}
-        <div className="text-center max-w-3xl mb-12">
-          <h2 className="text-3xl lg:text-5xl font-black tracking-tight text-gray-900 dark:text-white mb-4">
+        <div className="text-center max-w-3xl mb-8 sm:mb-12 px-2">
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black tracking-tight text-gray-900 dark:text-white mb-3 sm:mb-4">
             Schedule an Appointment
           </h2>
 
-          <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg">
+          <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base lg:text-lg">
             Pick a date and freely select your preferred time. Synced in real-time with my calendar availability.
           </p>
         </div>
 
         {/* Bespoke Calendar & Time Selection Card */}
-        <div className="w-full max-w-5xl rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl shadow-2xl p-6 sm:p-8 transition-colors duration-300 transform-gpu">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="w-full max-w-5xl rounded-2xl sm:rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl shadow-2xl p-4 sm:p-6 lg:p-8 transition-colors duration-300 transform-gpu">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
             {/* Left Column: Calendar (5 cols) */}
             <div className="lg:col-span-5 border-b lg:border-b-0 lg:border-r border-slate-200 dark:border-slate-800 pb-6 lg:pb-0 lg:pr-6">
               <CustomCalendar

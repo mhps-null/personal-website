@@ -67,12 +67,12 @@ export default function CustomCalendar({ selectedDate, onSelectDate }) {
   return (
     <div className="w-full select-none">
       {/* Month Navigation */}
-      <div className="flex items-center justify-between mb-4 px-2">
+      <div className="flex items-center justify-between mb-3 sm:mb-4 px-1 sm:px-2">
         <div>
-          <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+          <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
             {MONTH_NAMES[month]} {year}
           </h3>
-          <p className="text-xs text-slate-500 dark:text-slate-400">
+          <p className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">
             Select a date to view available time slots
           </p>
         </div>
@@ -81,7 +81,7 @@ export default function CustomCalendar({ selectedDate, onSelectDate }) {
           <button
             type="button"
             onClick={handlePrevMonth}
-            className="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            className="p-1.5 sm:p-2 rounded-lg sm:rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
             aria-label="Previous month"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -91,7 +91,7 @@ export default function CustomCalendar({ selectedDate, onSelectDate }) {
           <button
             type="button"
             onClick={handleNextMonth}
-            className="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            className="p-1.5 sm:p-2 rounded-lg sm:rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
             aria-label="Next month"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -102,7 +102,7 @@ export default function CustomCalendar({ selectedDate, onSelectDate }) {
       </div>
 
       {/* Weekday Labels */}
-      <div className="grid grid-cols-7 gap-1 text-center text-xs font-semibold text-slate-400 dark:text-slate-500 mb-2">
+      <div className="grid grid-cols-7 gap-1 text-center text-[11px] sm:text-xs font-semibold text-slate-400 dark:text-slate-500 mb-2">
         {DAY_NAMES.map((name) => (
           <div key={name} className="py-1">
             {name}
@@ -111,10 +111,10 @@ export default function CustomCalendar({ selectedDate, onSelectDate }) {
       </div>
 
       {/* Days Grid */}
-      <div className="grid grid-cols-7 gap-1.5">
+      <div className="grid grid-cols-7 gap-1 sm:gap-1.5">
         {daysGrid.map((item) => {
           if (item.type === "empty") {
-            return <div key={item.key} className="h-10 sm:h-11" />;
+            return <div key={item.key} className="h-9 sm:h-10 md:h-11" />;
           }
 
           const { dayNumber, dateStr, isPast, isToday, isSelected } = item;
@@ -125,7 +125,7 @@ export default function CustomCalendar({ selectedDate, onSelectDate }) {
               type="button"
               disabled={isPast}
               onClick={() => onSelectDate(dateStr)}
-              className={`relative h-10 sm:h-11 rounded-xl flex flex-col items-center justify-center font-medium text-sm transition-all duration-200 ${
+              className={`relative h-9 sm:h-10 md:h-11 rounded-lg sm:rounded-xl flex flex-col items-center justify-center font-medium text-xs sm:text-sm transition-all duration-200 ${
                 isSelected
                   ? "bg-blue-600 dark:bg-red-500 text-white font-bold shadow-lg shadow-blue-500/30 dark:shadow-red-500/40 scale-105 z-10"
                   : isPast
@@ -137,7 +137,7 @@ export default function CustomCalendar({ selectedDate, onSelectDate }) {
 
               {/* Today dot indicator */}
               {isToday && !isSelected && (
-                <span className="absolute bottom-1.5 w-1 h-1 rounded-full bg-blue-600 dark:bg-red-400" />
+                <span className="absolute bottom-1 sm:bottom-1.5 w-1 h-1 rounded-full bg-blue-600 dark:bg-red-400" />
               )}
             </button>
           );
