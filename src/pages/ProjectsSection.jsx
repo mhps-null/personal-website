@@ -1,6 +1,5 @@
-import { motion } from "framer-motion"
+import { motion as Motion } from "framer-motion"
 import CardProjects from "../components/CardProjects"
-import projectImg from "../assets/Haris.png"
 import queensImg from "../assets/QueensSolver.png"
 import pcImg from "../assets/PC1.jpg"
 import osImg from "../assets/OS.png"
@@ -70,7 +69,7 @@ const PROJECTS_DATA = [
 
 const ProjectsSection = () => {
     return (
-        <section id="projects" className="w-full py-16 px-4 sm:px-6 lg:px-8 flex justify-center">
+        <section id="projects" className="w-full py-16 px-4 sm:px-6 lg:px-8 flex justify-center scroll-mt-20">
             <div className="w-full mt-8 max-w-7xl mx-auto flex flex-col items-center">
 
                 <h2 className="text-3xl lg:text-5xl font-black text-center text-gray-900 dark:text-white mb-4">
@@ -81,14 +80,14 @@ const ProjectsSection = () => {
                     Here are selected projects I’ve built.
                 </p>
 
-                <motion.div
+                <Motion.div
                     className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
                     variants={containerVariants}
                     initial="hidden"
                     animate="show"
                 >
                     {PROJECTS_DATA.map((project, index) => (
-                        <motion.div
+                        <Motion.div
                             key={project.title}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -109,9 +108,9 @@ const ProjectsSection = () => {
                                     />
                                 }
                             />
-                        </motion.div>
+                        </Motion.div>
                     ))}
-                </motion.div>
+                </Motion.div>
 
             </div>
         </section>

@@ -5,6 +5,7 @@ const NAV_LINKS = [
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Schedule', href: '#schedule' },
     { name: 'Contact', href: '#contact' },
 ]
 
@@ -23,7 +24,7 @@ const Header = () => {
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className="text-lg md:text-sm lg:text-md font-medium dark:hover:text-red-400 dark:hover:text-glow-red hover:text-blue-600 hover:text-glow-indigo"
+                                className="text-lg md:text-sm lg:text-md font-medium dark:hover:text-red-400 dark:hover:text-glow-red hover:text-blue-600 hover:text-glow-indigo transition-colors"
                             >
                                 {link.name}
                             </a>

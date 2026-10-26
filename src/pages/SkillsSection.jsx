@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"
+import { motion as Motion } from "framer-motion"
 import CardSkills from "../components/CardSkills"
 
 const containerVariants = {
@@ -129,7 +129,7 @@ const SkillsSection = () => {
     return (
         <section
             id="skills"
-            className="w-full py-16 px-4 sm:px-6 lg:px-8 flex justify-center"
+            className="w-full py-16 px-4 sm:px-6 lg:px-8 flex justify-center scroll-mt-20"
         >
             <div className="w-full max-w-7xl mt-8 mx-auto flex flex-col items-center">
                 <h2 className="text-3xl lg:text-5xl font-black tracking-tight text-gray-900 dark:text-white mb-4">
@@ -140,14 +140,14 @@ const SkillsSection = () => {
                     Soft skills from curiosity and initiative; hard skills from structured learning.
                 </p>
 
-                <motion.div
+                <Motion.div
                     className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 items-stretch"
                     variants={containerVariants}
                     initial="hidden"
                     animate="show"
                 >
                     {SKILLS_DATA.map((item, index) => (
-                        <motion.div
+                        <Motion.div
                             key={item.title}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -155,9 +155,9 @@ const SkillsSection = () => {
                             transition={{ delay: index * 0.12, duration: 0.4 }}
                         >
                             <CardSkills {...item} />
-                        </motion.div>
+                        </Motion.div>
                     ))}
-                </motion.div>
+                </Motion.div>
             </div>
         </section>
     )

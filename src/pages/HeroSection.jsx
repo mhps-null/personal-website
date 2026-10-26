@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import profileImg from '../assets/Haris.png';
-import { motion, AnimatePresence } from "framer-motion"
+import { motion as Motion, AnimatePresence } from "framer-motion"
 
 const HERO_DATA = {
     name: "Muhammad Haris Putra Sulastianto",
@@ -76,7 +76,7 @@ const HeroSection = () => {
     return (
         <section
             id="about"
-            className="w-full min-h-[60vh] flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8"
+            className="w-full min-h-[60vh] flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8 scroll-mt-20"
         >
             <div className="w-full max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-12">
 
@@ -88,7 +88,7 @@ const HeroSection = () => {
 
                         <h2 className="text-xl lg:text-3xl font-bold tracking-tight text-gray-700 dark:text-gray-300">
                             I'm a <AnimatePresence mode="wait">
-                                <motion.span
+                                <Motion.span
                                     key={roleIndex}
                                     className="text-gradient-red text-gradient-blue inline-block"
                                     initial={{ opacity: 0, y: 6 }}
@@ -97,7 +97,7 @@ const HeroSection = () => {
                                     transition={{ duration: 0.35 }}
                                 >
                                     {HERO_DATA.roles[roleIndex]}
-                                </motion.span>
+                                </Motion.span>
                             </AnimatePresence>
                         </h2>
                     </div>

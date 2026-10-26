@@ -33,7 +33,7 @@ const ContactSection = () => {
 
     return (<section
         id="contact"
-        className="w-full flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8"
+        className="w-full flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8 scroll-mt-20"
     >
         <div className="w-full max-w-7xl mx-auto flex flex-col items-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-black tracking-tight text-gray-900 dark:text-white mb-4 ">
